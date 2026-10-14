@@ -2,7 +2,7 @@ import argparse
 import tkinter as tk
 import socket
 import getpass
-import xml.etree.ElementTree as ET       # ← ДОБАВИТЬ (было: import os — удаляем, не нужен)
+import xml.etree.ElementTree as et       # ← ДОБАВИТЬ (было: import os — удаляем, не нужен)
 from pathlib import Path
 from tkinter import scrolledtext
 
@@ -29,13 +29,13 @@ class ShellEmulator:
 
     def _load_vfs(self, path):
         try:
-            tree = ET.parse(path)
+            tree = et.parse(path)
             self.vfs_root = tree.getroot()
             print(f"[DEBUG] VFS успешно загружена: {path}")
         except FileNotFoundError:
             print(f"[ERROR] Файл VFS не найден: {path}")
             self.vfs_root = None
-        except ET.ParseError as e:
+        except et.ParseError as e:
             print(f"[ERROR] Ошибка парсинга XML: {e}")
             self.vfs_root = None
 
