@@ -15,6 +15,8 @@
 ---
 
 ## Структура проекта
+
+```
 shell-emulator/
 ├── src/
 │ └── emulator.py # Основной код (GUI + логика + VFS)
@@ -27,7 +29,7 @@ shell-emulator/
 ├── run.bat # Скрипт запуска (Windows)
 ├── README.md # Документация
 └── .gitignore
-
+```
 ---
 
 ## Функции и настройки
