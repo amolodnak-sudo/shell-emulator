@@ -165,11 +165,14 @@ py src/emulator.py --vfs-path ./vfs/vfs.xml --script ./tests/test_vfs_deep.sh
 
 
 ### Логирование тестирования параметров командной строки
+```
 [DEBUG] Запуск эмулятора...
 [DEBUG] Путь к VFS: ./vfs/vfs.xml
 [DEBUG] Путь к стартовому скрипту: ./tests/test_script.sh
 [DEBUG] VFS успешно загружена: ./vfs/vfs.xml
+```
 Если указанный путь не существует — выводится предупреждение:
-
+```
 [WARNING] Путь к VFS не существует: ./vfs/vfs.xml
 [WARNING] Стартовый скрипт не найден: ./tests/missing.sh
+```
