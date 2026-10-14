@@ -193,6 +193,18 @@ class ShellEmulator:
         self.output.see(tk.END)
         self.output.configure(state=tk.DISABLED)
 
+    def _format_ls_output(self, node, kind):
+        if kind == "file":
+            return f"{node.get('name')}\n"
+
+        names = sorted(
+            child.get("name", "?")
+            for child in node
+            if child.tag in ("dir", "file")
+        )
+        return "  ".join(names) + "\n" if names else "(пусто)\n"
+
+
     def _cmd_ls(self, args):
         if self.vfs_root is None:
             self._print("ls: VFS не загружена\n")
@@ -207,17 +219,7 @@ class ShellEmulator:
                         f"Нет такого файла или каталога\n")
             return
 
-        if kind == "file":
-            self._print(f"{node.get('name')}\n")
-            return
-
-        names = sorted(
-            child.get("name", "?")
-            for child in node
-            if child.tag in ("dir", "file")
-        )
-        self._print("  ".join(names) + "\n" if names else "(пусто)\n")
-
+        self._print(self._format_ls_output(node, kind))
     def _cmd_cd(self, args):
         if self.vfs_root is None:
             self._print("cd: VFS не загружена\n")
