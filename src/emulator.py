@@ -2,7 +2,7 @@ import argparse
 import tkinter as tk
 import socket
 import getpass
-import xml.etree.ElementTree as et       # ← ДОБАВИТЬ (было: import os — удаляем, не нужен)
+import xml.etree.ElementTree as et
 from pathlib import Path
 from tkinter import scrolledtext
 
@@ -25,7 +25,6 @@ class ShellEmulator:
         if self.script_path:
             self._run_startup_script()
 
-    # ---------- VFS ----------
 
     def _load_vfs(self, path):
         try:
@@ -217,10 +216,7 @@ class ShellEmulator:
             for child in node
             if child.tag in ("dir", "file")
         )
-        if names:
-            self._print("  ".join(names) + "\n")
-        else:
-            self._print("(пусто)\n")
+        self._print("  ".join(names) + "\n" if names else "(пусто)\n")
 
     def _cmd_cd(self, args):
         if self.vfs_root is None:
