@@ -14,4 +14,4 @@ cd /tmp
 ls
 unknown_command
 help
-exit
+#exit

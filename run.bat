@@ -1,3 +1,5 @@
 @echo off
-python src/emulator.py --vfs-path ./vfs --script ./tests/test_script.sh
+cd /d "%~dp0"
+py src/emulator.py --vfs-path ./vfs/vfs.xml --script ./tests/test_script.sh
+echo.
 pause
