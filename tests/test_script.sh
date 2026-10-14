@@ -1,7 +1,17 @@
+# Полный тест всех команд эмулятора (Этапы 1-3)
 ls
-ls -la /home/user
+cd /home/user
+ls
+cd documents
+ls
 cd ..
-cd /var/log/syslog
+ls
+cd /
+ls /etc
+cd /var/log
+ls
+cd /tmp
+ls
 unknown_command
 help
 exit

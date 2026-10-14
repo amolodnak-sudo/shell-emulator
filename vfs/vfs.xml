@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filesystem>
+    <dir name="/">
+        <dir name="home">
+            <dir name="user">
+                <dir name="documents">
+                    <file name="report.txt" content="UmVwb3J0IGRhdGE=" />
+                    <file name="notes.md" content="I1Rlc3Qgbm90ZXM=" />
+                </dir>
+                <file name="readme.txt" content="SGVsbG8gd29ybGQh" />
+            </dir>
+        </dir>
+        <dir name="var">
+            <dir name="log">
+                <file name="syslog" content="TG9nIGZpbGUgZGF0YQ==" />
+                <file name="auth.log" content="QXV0aCBkYXRh" />
+            </dir>
+        </dir>
+        <dir name="etc">
+            <file name="hosts" content="MTI3LjAuMC4xIGxvY2FsaG9zdA==" />
+            <file name="passwd" content="cm9vdDp4OjA6MDpyb290Oi9yb290Oi9iaW4vYmFzaA==" />
+        </dir>
+        <dir name="tmp">
+        </dir>
+    </dir>
+</filesystem>
